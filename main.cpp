@@ -44,7 +44,7 @@ int main()
 
         ch = getch();
 
-        if (countTimeDown && ch == ERR)
+        if (ch == ERR)
         {
             std::this_thread::sleep_for(wait_time);
 
@@ -53,7 +53,7 @@ int main()
                 --msCount;
             }
 
-            if  (msCount <= 0)
+            if  (countTimeDown && msCount <= 0)
             {
                 break;
             }
@@ -91,7 +91,8 @@ int main()
     }
     else if (choice == "Intel")
     {
-        execl("/usr/bin/startx", "/usr/bin/startx", nullptr);
+        execl("/home/chiggie/dotfiles/msi_gs65/startx-wrapper", "/home/chiggie/dotfiles/msi_gs65/startx-wrapper", nullptr);
+
     }
 
     return 0;

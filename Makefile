@@ -7,5 +7,9 @@ all: nvselect
 nvselect: main.cpp
 	$(CXX) $(CPPFLAGS) $^ -o $@ $(LDFLAGS)
 
+install: nvselect
+	mkdir -p ~/bin
+	ln -s $(PWD)/nvselect ~/bin/nvselect
+
 clean:
 	rm nvselect
